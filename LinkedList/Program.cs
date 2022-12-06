@@ -14,9 +14,9 @@
             myLinkedList.Add(20);
             myLinkedList.Add(40);
             
-            //myLinkedList.InsertMethod(88, 1);
-            
-            myLinkedList.DeleteFirstElemt();
+            //myLinkedList.InsertMethod(88, 1);          
+            //myLinkedList.DeleteFirstElemt();
+            myLinkedList.DeleteLastElement();
             myLinkedList.DiaplayLnkLst();
         }
     }
