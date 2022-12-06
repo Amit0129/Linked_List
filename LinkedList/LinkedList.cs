@@ -118,7 +118,7 @@ namespace LinkedList
         {
             if (this.head == null)
             {
-                Console.WriteLine( "The LinkedList is Empty"); ;
+                Console.WriteLine("The LinkedList is Empty"); ;
             }
             this.head = head.next;
             return this.head;
@@ -129,12 +129,12 @@ namespace LinkedList
             {
                 return null;
             }
-            if(this.head.next == null)
+            if (this.head.next == null)
             {
                 return null;
             }
             Node temp = this.head;
-            while(temp.next.next != null)
+            while (temp.next.next != null)
             {
                 temp = temp.next;
             }
@@ -142,6 +142,31 @@ namespace LinkedList
             return head;
 
         }
+        public void SearchAValue(int value)
+        {
+            Node temp = this.head;
+            int find = 0;
+            int i = 0;
+            while (temp != null)
+            {
+                i++;
+                if (temp.data == value)
+                {
+                    find++;
+                    break;
+                }
+                temp = temp.next;
+            }
+            if (find == 1)
+            {
+                Console.WriteLine($"The position of value {value} is {i}");
+            }
+            else
+            {
+                Console.WriteLine("The value {0} not present in LinkedList",value);
+            }
+        }
+
 
 
         public void DiaplayLnkLst()

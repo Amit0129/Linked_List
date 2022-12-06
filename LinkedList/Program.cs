@@ -13,10 +13,11 @@
             myLinkedList.Add(10);
             myLinkedList.Add(20);
             myLinkedList.Add(40);
-            
+
             //myLinkedList.InsertMethod(88, 1);          
             //myLinkedList.DeleteFirstElemt();
-            myLinkedList.DeleteLastElement();
+            //myLinkedList.DeleteLastElement();
+            myLinkedList.SearchAValue(70);
             myLinkedList.DiaplayLnkLst();
         }
     }
