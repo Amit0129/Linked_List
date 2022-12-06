@@ -13,7 +13,9 @@
             myLinkedList.Add(10);
             myLinkedList.Add(20);
             myLinkedList.Add(40);
-            myLinkedList.InserttoLnkLst(5, 69);
+            //myLinkedList.InserttoLnkLst(4, 88);
+
+            myLinkedList.InsertMethod(88, 1);
             myLinkedList.DiaplayLnkLst();
         }
     }

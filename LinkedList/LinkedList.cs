@@ -28,40 +28,117 @@ namespace LinkedList
             }
             Console.WriteLine($"{node.data} Add in to LinkedList");
         }
-        public Node InserttoLnkLst(int position, int data)
+        //public Node InserttoLnkLst(int position, int data)
+        //{
+        //    if (position < 0)
+        //    {
+        //        Console.WriteLine("Invalid position : Write a valid position");
+        //    }
+        //    if (position == 1)
+        //    {
+        //        Node newNode = new Node(data);
+        //        newNode.next = this.head;
+        //        head = newNode;
+
+        //    }
+        //    else
+        //    {
+        //        Node temp = this.head;
+        //        while (position-- != 0)
+        //        {
+        //            if (position == 1)
+        //            {
+        //                Node node = new Node(data);
+        //                node.next = this.head.next;
+        //                head.next = node;
+        //                break;
+        //            }
+        //            temp = temp.next;
+        //        }
+        //        if (position != 1)
+        //        {
+        //            Console.WriteLine("position Out Of Range");
+        //        }
+        //    }
+        //    return head;
+
+        //}
+        public void InsertMethod(int newElement, int position)
+
         {
-            if (position < 0)
+
+            Node newNode = new Node(newElement);
+
+            newNode.data = newElement;
+
+            newNode.next = null;
+
+
+
+
+            if (position < 1)
+
             {
-                Console.WriteLine("Invalid position : Write a valid position");
+
+                Console.Write("\nposition should be >= 1.");
+
             }
-            if (position == 1)
+
+            else if (position == 1)
+
             {
-                Node newNode = new Node(data);
-                newNode.next = this.head;
+
+                newNode.next = head;
+
                 head = newNode;
-                
+
             }
+
             else
+
             {
-                Node temp = this.head;
-                while (position-- != 0)
+
+                Node temp = new Node(newElement);
+
+                temp = head;
+
+                for (int i = 1; i < position - 1; i++)
+
                 {
-                    if (position == 1)
+
+                    if (temp != null)
+
                     {
-                        Node node = new Node(data);
-                        node.next = this.head.next;
-                        head.next = node;
-                        break;
+
+                        temp = temp.next;
+
                     }
-                    temp = temp.next;
+
                 }
-                if (position != 1)
+
+                if (temp != null)
+
                 {
-                    Console.WriteLine("position Out Of Range");
+
+                    newNode.next = temp.next;
+
+                    temp.next = newNode;
+
                 }
+
+                else
+
+                {
+
+                    Console.Write("\nThe previous node is null.");
+
+                }
+
             }
-            return head;
+
         }
+
+
         public void DiaplayLnkLst()
         {
             Node temp = this.head;
