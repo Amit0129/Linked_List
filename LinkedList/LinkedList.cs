@@ -120,6 +120,25 @@ namespace LinkedList
             head = head.next;
 
         }
+        public Node DeleteLastElement()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            if(this.head.next == null)
+            {
+                return null;
+            }
+            Node temp = this.head;
+            while(temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = null;
+            return head;
+
+        }
 
 
         public void DiaplayLnkLst()
