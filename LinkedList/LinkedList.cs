@@ -114,11 +114,14 @@ namespace LinkedList
                 }
             }
         }
-        public void DeleteFirstElemt()
+        public Node DeleteFirstElemt()
         {
-            Node temp = head.next;
-            head = head.next;
-
+            if (this.head == null)
+            {
+                Console.WriteLine( "The LinkedList is Empty"); ;
+            }
+            this.head = head.next;
+            return this.head;
         }
 
 
