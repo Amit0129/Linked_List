@@ -19,6 +19,7 @@ namespace LinkedList
             }
             else
             {
+
                 Node temp = this.head;
                 while (temp.next != null)
                 {
@@ -26,7 +27,7 @@ namespace LinkedList
                 }
                 temp.next = node;
             }
-            Console.WriteLine($"{node.data} Add in to LinkedList");
+            Console.WriteLine($"{node.data} Added in to LinkedList");
         }
         //public Node InserttoLnkLst(int position, int data)
         //{
@@ -187,8 +188,7 @@ namespace LinkedList
         public int SearchAValue(int value)
         {
             Node temp = this.head;
-            int position = 0;
-            int i = 0;
+            int position = 0, i=0;
             while (temp != null)
             {
                 i++;
@@ -200,6 +200,42 @@ namespace LinkedList
                 temp = temp.next;
             }
             return i; 
+        }
+
+        public void SortedInsert(int data)
+
+        {
+
+            Node current;
+
+            Node new_node = new Node(data);
+
+
+
+
+            /* Special case for head node */
+
+            if (head == null || (head.data.CompareTo(new_node.data) >= 0))
+
+            {
+
+                new_node.next = head;
+
+                head = new_node;
+
+            }
+            else
+            {
+                current = head;
+                while (current.next != null && (current.next.data.CompareTo(new_node.data)) < 0)
+                {
+                    current = current.next;
+                }                    
+                new_node.next = current.next;
+                current.next = new_node;
+
+            }
+
         }
 
 
