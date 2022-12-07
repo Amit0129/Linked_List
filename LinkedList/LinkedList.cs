@@ -147,6 +147,42 @@ namespace LinkedList
         {
             int posi = SearchAValue(exValue);
             InsertMethod(addValue, posi+1);
+            Console.WriteLine($"Adding the value {addValue} after {exValue}");
+        }
+        public Node RemoveAElement(int value)
+        {
+            int position = SearchAValue(value);
+            if (position == 1)
+            {
+                this.head = this.head.next;                
+            }            
+            else
+            {
+                Node temp = this.head;
+                for (int i = 1; i < position - 1; i++)
+                {
+                    if (temp != null)
+                    {
+                        temp = temp.next;
+                    }
+                }
+                if (temp != null)
+                {
+                    temp.next = temp.next.next;
+                }
+            }
+            return this.head;
+        }
+        public int Size()
+        {
+            int count = 0;
+            Node temp = this.head;
+            while (temp != null)
+            {
+                count++;
+                temp = temp.next;
+            }
+            return count;
         }
         public int SearchAValue(int value)
         {
